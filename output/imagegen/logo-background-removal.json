@@ -1,0 +1,5 @@
+{
+  "tool": "built-in image_gen",
+  "prompt": "Precise background extraction: preserve original Trace Immigration horizontal logo, gold monogram, maple leaf, black TRACE and gold IMMIGRATION lettering; remove cream background, transparent PNG with clean antialiased edges.",
+  "file": "public/brand/logo-transparent.png"
+}

@@ -1,0 +1,45 @@
+{
+  "tool": "built-in image_gen",
+  "assets": [
+    {
+      "name": "toronto-sunrise",
+      "prompt": "Use case: photorealistic-natural. Asset: Canadian immigration consultancy website hero photograph, landscape 1536x1024. Realistic Toronto waterfront skyline at warm sunrise, recognizable CN Tower prominently on the right half, Rogers Centre and downtown high rises, still Lake Ontario foreground, pale ivory sky to left creating quiet negative space. Refined luxury editorial architecture photography, champagne gold sunlight, soft cream atmospheric haze, natural detail. Beautiful believable proportions, no text, no logos, no watermark, no UI. Full bleed photograph only."
+    },
+    {
+      "name": "consultation-desk",
+      "prompt": "Use case: photorealistic-natural. Asset: consultation-desk, Canadian immigration consultancy website photograph. Close-up editorial photograph of an ivory desk with closed unbranded laptop, neatly arranged blank documents, fountain pen and a small cream ceramic coffee cup, tasteful modern professional home office, window light, no people, suitable for personalized Canadian immigration planning. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "moraine-lake",
+      "prompt": "Use case: photorealistic-natural. Asset: moraine-lake, Canadian immigration consultancy website photograph. Beautiful realistic Moraine Lake in the Canadian Rockies, tranquil turquoise water, evergreen forest and mountain peaks, subtle warm early morning light, elegant calm scenic travel photography, generous sky and wide composition. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "virtual-meeting",
+      "prompt": "Use case: photorealistic-natural. Asset: virtual-meeting, Canadian immigration consultancy website photograph. Editorial photograph of a tidy premium home office desk with an open laptop displaying an unlabelled video call with one professional adult consultant, seen at an angle from behind the remote client, warm natural window light, ivory furnishings, virtual immigration consultation context, no legible text or UI labels. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "spousal-sponsorship",
+      "prompt": "Use case: photorealistic-natural. Asset: spousal-sponsorship, Canadian immigration consultancy website photograph. Two elegant cream wedding chairs side by side on a lawn beside a Canadian lakeside, understated ivory floral arrangements, intimate ceremony setting, soft warm afternoon light, no people, premium fine art editorial photograph. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "permanent-residence",
+      "prompt": "Use case: photorealistic-natural. Asset: permanent-residence, Canadian immigration consultancy website photograph. Tasteful editorial still life of a small cream architectural model house and two silver home keys resting on a light oak table by a window, soft champagne sunlight, hopeful sense of a new home in Canada, realistic materials, uncluttered composition. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "canadian-citizenship",
+      "prompt": "Use case: photorealistic-natural. Asset: canadian-citizenship, Canadian immigration consultancy website photograph. Beautiful realistic Toronto skyline with CN Tower viewed across Lake Ontario from a green waterfront park, a small Canadian maple leaf flag naturally attached to a pole beside the path, bright soft morning light, welcoming peaceful Canadian setting, realistic architecture. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "family-immigration",
+      "prompt": "Use case: photorealistic-natural. Asset: family-immigration, Canadian immigration consultancy website photograph. Warm candid editorial photograph of a multigenerational South Asian family of five including grandparents, adult parents and child holding hands while walking at the edge of a Canadian lakeside beach at sunset, seen from behind at a respectful distance, natural clothing in cream and muted earth tones, authentic family connection, realistic anatomy. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "complex-case-review",
+      "prompt": "Use case: photorealistic-natural. Asset: complex-case-review, Canadian immigration consultancy website photograph. Close-up editorial photograph of two professionals' hands reviewing neat unbranded paperwork together at a light oak desk, a laptop and pen, ivory modern office background, careful thoughtful document review, no faces needed, realistic hands, no readable text. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    },
+    {
+      "name": "harbourfront",
+      "prompt": "Use case: photorealistic-natural. Asset: harbourfront, Canadian immigration consultancy website photograph. Wide realistic Toronto harbourfront at golden hour, lakeside promenade and elegant downtown architecture across calm water, refined muted gold and cream palette, peaceful aspirational Canada travel editorial photograph, no foreground crowd. Landscape 1536x1024, full bleed single photograph, refined premium editorial photography, natural believable detail, restrained ivory/cream/champagne-gold grading, no added text, no watermark, no logos, no collage, no website mockup."
+    }
+  ]
+}
