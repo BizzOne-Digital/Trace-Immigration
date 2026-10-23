@@ -8,7 +8,7 @@ import "./env";
 import mongoose from "mongoose";
 import { connectDB } from "../src/lib/db";
 import * as M from "../src/lib/models";
-import { DEFAULT_CONSULTATION_TYPES, DEFAULT_SERVICES } from "../src/lib/default-content";
+import { DEFAULT_CONSULTATION_TYPES, DEFAULT_PRICING_PLANS, DEFAULT_SERVICES } from "../src/lib/default-content";
 import { resolveImageUrl } from "../src/lib/image-assets";
 
 async function main() {
@@ -46,7 +46,20 @@ async function main() {
   for (const t of DEFAULT_CONSULTATION_TYPES) {
     await M.ConsultationType.updateOne({ slug: t.slug }, { $setOnInsert: t }, { upsert: true });
   }
-  console.log("✓ Consultation type (no price — set an approved price in admin)");
+  // The original starter type had no price; apply the approved one only if admin has not set a price yet.
+  const [indepth] = DEFAULT_CONSULTATION_TYPES;
+  await M.ConsultationType.updateOne(
+    { slug: indepth.slug, priceLabel: "" },
+    { name: indepth.name, description: indepth.description, priceLabel: indepth.priceLabel }
+  );
+  console.log("✓ Consultation types (approved prices, Oct 23, 2026 fee list)");
+
+  created = 0;
+  for (const p of DEFAULT_PRICING_PLANS) {
+    const r = await M.PricingPlan.updateOne({ name: p.name }, { $setOnInsert: p }, { upsert: true });
+    created += r.upsertedCount;
+  }
+  console.log(`✓ Pricing plans (${created} created, ${DEFAULT_PRICING_PLANS.length - created} already present)`);
 
   // Starter hours are a suggestion only; online booking stays OFF until the firm reviews them.
   await M.Availability.updateOne(
@@ -71,7 +84,7 @@ async function main() {
   );
   console.log(`✓ Team draft profile ${team.upsertedCount ? "created" : "already present"} (unpublished)`);
 
-  console.log("\nNot seeded on purpose: testimonials, prices, credentials, agreement wording.");
+  console.log("\nNot seeded on purpose: testimonials, credentials, agreement wording.");
   await mongoose.disconnect();
 }
 

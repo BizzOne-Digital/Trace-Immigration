@@ -1,5 +1,5 @@
 import { IMAGES } from "./page-schemas";
-import type { ServiceDoc, ConsultationTypeDoc } from "./models";
+import type { ServiceDoc, ConsultationTypeDoc, PricingPlanDoc } from "./models";
 
 /** Starter service content. Describes scope only — no outcomes, fees or credentials. */
 export const DEFAULT_SERVICES: ServiceDoc[] = [
@@ -151,12 +151,117 @@ export const DEFAULT_SERVICES: ServiceDoc[] = [
 /** Starter consultation type. Price is intentionally blank until approved by the firm. */
 export const DEFAULT_CONSULTATION_TYPES: ConsultationTypeDoc[] = [
   {
-    name: "Initial Consultation",
+    name: "In-Depth Consultation",
     slug: "initial-consultation",
-    description: "A personalized virtual consultation to review your situation and discuss your options.",
+    description: "A one-hour virtual consultation with a licensed Canadian immigration expert to review your situation and discuss your options.",
     durationMinutes: 60,
-    priceLabel: "",
+    priceLabel: "$199 + HST",
     order: 1,
+    status: "published",
+  },
+  {
+    name: "Urgent Consultation",
+    slug: "urgent-consultation",
+    description: "A priority virtual consultation for time-sensitive matters.",
+    durationMinutes: 60,
+    priceLabel: "$299 + HST",
+    order: 2,
+    status: "published",
+  },
+];
+
+const GOV_FEES = "*Government application processing fees are not included.";
+
+/** What every application fee covers (shown as the checklist on each fee tab). */
+const APPLICATION_INCLUDES = [
+  "Full support from start to finish, until a decision is made.",
+  "Fast responses and real support, so you never feel lost in the process.",
+  "Careful preparation of your application to avoid delays or issues.",
+  "We handle IRCC requests for you if they ask for more documents or have questions.",
+  "Clear guidance at every step, so you always know what is happening with your case.",
+  "Easy payment options: split your fee into two installments.",
+];
+
+/** Approved fee list (Services Fee List, Oct 23, 2026). Matched by name when seeding. */
+export const DEFAULT_PRICING_PLANS: PricingPlanDoc[] = [
+  {
+    name: "Express Entry & PR",
+    description: "Permanent residence through Express Entry, RNIP, AIPP, PNP and Francophone programs. $999 per dependent spouse; no fee for dependent children under 18.",
+    priceLabel: "$4,299 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "permanent-residence",
+    order: 1,
+    status: "published",
+  },
+  {
+    name: "Ontario Immigrant Nominee Program",
+    description: "OINP nomination application. The PR application to IRCC is not included in this price but receives a 10% fee discount.",
+    priceLabel: "$3,899 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "permanent-residence",
+    order: 2,
+    status: "published",
+  },
+  {
+    name: "Spousal Sponsorship",
+    description: "Sponsorship of your spouse or partner. $499 per dependent.",
+    priceLabel: "$3,999 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "spousal-partner-sponsorship",
+    order: 3,
+    status: "published",
+  },
+  {
+    name: "Citizenship by Naturalization",
+    description: "Canadian citizenship application for permanent residents.",
+    priceLabel: "Starting from $1,499 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "canadian-citizenship",
+    order: 4,
+    status: "published",
+  },
+  {
+    name: "Citizenship by Descent (Bill C-3)",
+    description: "Fees vary depending on the number of generations involved and the number of people applying. Families applying together with a common ancestor may see fees adjusted accordingly.",
+    priceLabel: "Starting from $2,499 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "canadian-citizenship",
+    order: 5,
+    status: "published",
+  },
+  {
+    name: "Super Visa",
+    description: "Super Visa application for parents and grandparents.",
+    priceLabel: "$899 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "family-immigration-super-visa",
+    order: 6,
+    status: "published",
+  },
+  {
+    name: "Temporary Resident Permit (TRP)",
+    description: "Temporary Resident Permit application.",
+    priceLabel: "$3,399 + HST",
+    priceNote: GOV_FEES,
+    features: APPLICATION_INCLUDES,
+    serviceSlug: "refusals-complex-matters",
+    order: 7,
+    status: "published",
+  },
+  {
+    name: "Other Services",
+    description: "PGWP, Francophone Work Permit, other LMIA-exempt work permits, study permits, extensions, TRV, visitor records and restoration.",
+    priceLabel: "",
+    priceNote: "Contact us for pricing.",
+    features: [],
+    serviceSlug: "",
+    order: 8,
     status: "published",
   },
 ];

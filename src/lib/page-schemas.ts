@@ -170,7 +170,7 @@ export const PAGE_DEFS: PageDef[] = [
     metaTitle: "Consultation & Service Pricing | Trace Immigration",
     metaDescription: "Consultation and service fee information for Trace Immigration’s Canadian immigration services.",
     fields: [
-      ...hero("Pricing", "Clear, considered fees.", "Every matter is different. Fees are confirmed in writing before any work begins."),
+      ...hero("Our Fees", "Transparent pricing, no surprises.", "No hidden fees, no last-minute charges. Your fee is confirmed in writing before any work begins."),
       t("noPriceText", "Text when no price is published", "Contact us for consultation details."),
       ta("note", "Footnote", "Government processing fees and third-party costs are separate from professional fees."),
     ],
