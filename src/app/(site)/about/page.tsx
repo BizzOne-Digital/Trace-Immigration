@@ -14,10 +14,23 @@ export default async function AboutPage() {
 
   return (
     <>
-      <PageHero eyebrow={f.heroEyebrow} title={f.heroTitle} intro={f.heroIntro} />
+      <PageHero eyebrow={f.heroEyebrow} title={f.heroTitle} intro={f.heroIntro}>
+        <RichText text={f.heroBody} className="mt-6 max-w-3xl text-muted" />
+      </PageHero>
 
-      <section className="relative h-64 sm:h-96" aria-hidden={!f.heroImageAlt}>
-        <SafeImage src={f.heroImage} alt={f.heroImageAlt} fill sizes="100vw" className="object-cover" />
+      <section className="bg-cream py-16 md:py-24" aria-labelledby="founder-heading">
+        <div className="container-x grid gap-10 lg:grid-cols-[minmax(0,0.8fr)_1.2fr] lg:gap-16">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md self-start overflow-hidden rounded-sm lg:sticky lg:top-32">
+            <SafeImage src={f.founderImage} alt={f.founderImageAlt} fill sizes="(min-width: 1024px) 40vw, 90vw" className="object-cover" />
+          </div>
+          <div>
+            <p className="eyebrow">{f.founderEyebrow}</p>
+            <h2 id="founder-heading" className="mt-4 font-serif text-4xl text-charcoal sm:text-5xl">{f.founderName}</h2>
+            <p className="mt-2 text-sm font-medium text-gold-ink">{f.founderRole}</p>
+            <h3 className="mt-8 font-serif text-2xl text-charcoal sm:text-3xl">{f.founderHeading}</h3>
+            <RichText text={f.founderBody} className="mt-5" />
+          </div>
+        </div>
       </section>
 
       <section className="container-x grid gap-10 py-16 md:py-24 lg:grid-cols-[1fr_1.4fr]" aria-labelledby="story-heading">
@@ -27,7 +40,9 @@ export default async function AboutPage() {
 
       <section className="bg-cream py-16 md:py-24" aria-labelledby="values-heading">
         <div className="container-x">
-          <h2 id="values-heading" className="text-center font-serif text-4xl text-charcoal sm:text-5xl">{f.valuesHeading}</h2>
+          <p className="eyebrow text-center">{f.valuesEyebrow}</p>
+          <h2 id="values-heading" className="mt-4 text-center font-serif text-4xl text-charcoal sm:text-5xl">{f.valuesHeading}</h2>
+          {f.valuesIntro && <p className="mx-auto mt-5 max-w-3xl text-center leading-relaxed text-muted">{f.valuesIntro}</p>}
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {values.map(([title, desc]) => (
               <li key={title} className="card-line p-8">
@@ -37,19 +52,6 @@ export default async function AboutPage() {
               </li>
             ))}
           </ul>
-        </div>
-      </section>
-
-      <section className="grid lg:grid-cols-2" aria-labelledby="virtual-heading">
-        <div className="flex items-center px-5 py-16 md:px-14 lg:order-2">
-          <div className="max-w-lg">
-            <p className="eyebrow">How we work</p>
-            <h2 id="virtual-heading" className="mt-4 font-serif text-4xl text-charcoal sm:text-5xl">{f.virtualHeading}</h2>
-            <RichText text={f.virtualBody} className="mt-6" />
-          </div>
-        </div>
-        <div className="relative min-h-72 sm:min-h-96 lg:order-1">
-          <SafeImage src={f.virtualImage} alt={f.virtualImageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
       </section>
 

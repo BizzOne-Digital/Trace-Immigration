@@ -14,6 +14,15 @@ const nextConfig: NextConfig = {
     remotePatterns: [{ protocol: "https", hostname: "images.unsplash.com", pathname: "/**" }],
     formats: ["image/avif", "image/webp"],
   },
+  // Pages removed at the firm's request (Nov 2026) send visitors somewhere useful instead of a 404.
+  async redirects() {
+    return [
+      { source: "/pricing", destination: "/services", permanent: true },
+      { source: "/team", destination: "/about", permanent: true },
+      { source: "/services/:slug", destination: "/services", permanent: true },
+      { source: "/booking", destination: "https://form.traceimmigration.com/book/PFm3w0OsLPAwMIwdck2z", permanent: false },
+    ];
+  },
   async headers() {
     return [
       {

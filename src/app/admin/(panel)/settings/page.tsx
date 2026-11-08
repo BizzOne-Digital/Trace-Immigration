@@ -16,6 +16,7 @@ const FIELDS: FieldConfig[] = [
   { name: "logoAlt", label: "Logo alt text", type: "text" },
   { name: "social_facebook", label: "Facebook URL", type: "url", help: "Social links appear only when a full https:// URL is set." },
   { name: "social_instagram", label: "Instagram URL", type: "url" },
+  { name: "social_google", label: "Google Business Profile URL", type: "url", help: "Shown as \"Google Reviews\" in the footer." },
   { name: "social_linkedin", label: "LinkedIn URL", type: "url" },
   { name: "social_youtube", label: "YouTube URL", type: "url" },
   { name: "social_x", label: "X URL", type: "url" },

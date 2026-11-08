@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { MessageCircle, Send, X } from "lucide-react";
+import { BOOKING_URL } from "@/lib/site";
 
 type ServiceInfo = { title: string; slug: string; tagline: string };
 type Props = { services: ServiceInfo[]; email: string; phone: string; virtualStatement: string };
@@ -26,14 +27,14 @@ const SERVICE_KEYWORDS: Record<string, string[]> = {
 function reply(input: string, p: Props): Msg {
   const q = ` ${input.toLowerCase().trim()} `;
   const contact: Action = { label: "Contact us", href: "/contact" };
-  const book: Action = { label: "Book a consultation", href: "/booking" };
+  const book: Action = { label: "Book a consultation", href: BOOKING_URL };
 
   for (const s of p.services) {
     if (has(q, SERVICE_KEYWORDS[s.slug] ?? [s.title.toLowerCase()])) {
       return {
         from: "bot",
         text: `${s.title}: ${s.tagline} Every situation is different, so the best next step is a personalized consultation where we review your details.`,
-        actions: [{ label: `About ${s.title}`, href: `/services/${s.slug}` }, book],
+        actions: [{ label: "View our services", href: "/services" }, book],
       };
     }
   }
@@ -51,7 +52,7 @@ function reply(input: string, p: Props): Msg {
     return { from: "bot", text: `You can request a consultation online. ${p.virtualStatement}`, actions: [book] };
   }
   if (has(q, ["fee", "price", "cost", "charge", "kitna", "paise", "pricing"])) {
-    return { from: "bot", text: "Fees depend on your matter and are confirmed in writing before any work begins. Please see our pricing page or contact us for consultation details.", actions: [{ label: "Pricing", href: "/pricing" }, contact] };
+    return { from: "bot", text: "Fees depend on your matter and are confirmed in writing before any work begins. Book a consultation or contact us for details.", actions: [book, contact] };
   }
   if (has(q, ["contact", "email", "phone", "call", "number", "whatsapp", "rabta"])) {
     return { from: "bot", text: `Email: ${p.email}\nPhone: ${p.phone}`, actions: [contact] };

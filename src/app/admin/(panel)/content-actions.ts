@@ -233,7 +233,7 @@ export async function discardPageDraft(key: string): Promise<ActionResult> {
 }
 
 /* ---------------- Site settings ---------------- */
-const SOCIAL_KEYS = ["facebook", "instagram", "linkedin", "youtube", "x", "tiktok"] as const;
+const SOCIAL_KEYS = ["facebook", "instagram", "google", "linkedin", "youtube", "x", "tiktok"] as const;
 
 export async function saveSettings(fd: FormData): Promise<ActionResult> {
   return adminAction(async () => {

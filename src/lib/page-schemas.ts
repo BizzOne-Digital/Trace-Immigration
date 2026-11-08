@@ -35,7 +35,7 @@ export const PAGE_DEFS: PageDef[] = [
       t("heroEyebrow", "Hero eyebrow", "Personalized Canadian Immigration Guidance"),
       t("heroTitleAccent", "Headline (gold part)", "Your Future"),
       t("heroTitleRest", "Headline (remaining)", "Is Too Important to Leave to Chance."),
-      ta("heroSubtitle", "Hero subtitle", "Personalized Canadian immigration guidance for life’s most important transitions."),
+      ta("heroSubtitle", "Hero subtitle", "Expert Canadian immigration guidance delivered virtually. Wherever you are, your future deserves thoughtful strategy, clear direction, and dedicated attention."),
       t("heroPrompt", "Hero supporting line", "Ready to Immigrate?"),
       t("heroCta", "Hero button label", "Book a Consultation"),
       img("heroImage", "Hero image", IMAGES.torontoSunrise),
@@ -44,22 +44,23 @@ export const PAGE_DEFS: PageDef[] = [
       t("trust2", "Trust strip item 2", "100% Virtual Consultations"),
       t("trust3", "Trust strip item 3", "Serving Canada & Beyond"),
       t("servicesEyebrow", "Services eyebrow", "Our Expertise"),
-      t("servicesHeading", "Services heading", "Thoughtful guidance. Meaningful futures."),
       t("complexText", "Complex cases line", "Complex cases or a previous refusal? Let’s discuss your options."),
       t("aboutHeading", "About heading", "More than paperwork. Your life, your future."),
-      ta("aboutBody", "About text", "We bring careful assessment, personalized attention and thoughtful preparation to every immigration journey."),
+      ta("aboutBody", "About text", "We bring careful assessment, personalized attention and thoughtful preparation to every immigration application."),
       t("aboutLink", "About link label", "Discover Trace Immigration"),
       img("aboutImage", "About image", IMAGES.consultationDesk),
       t("aboutImageAlt", "About image alt text", "Documents and a laptop on a desk during a planning session"),
       t("whoEyebrow", "Who we help — eyebrow", "Who We Help"),
-      t("whoHeading", "Who we help — heading", "Guidance for every stage of your journey."),
+      t("whoHeading", "Who we help — heading", "Wherever You Are in Your Journey, We’re Here to Guide You."),
+      ta("whoIntro", "Who we help — description", "Every immigration journey is different. Whether you’re building a future in Canada, reuniting with family, or navigating a complex application, Trace Immigration provides clear, strategic guidance tailored to your circumstances — entirely virtually."),
       ta(
         "whoItems",
         "Who we help — cards (one per line: Title | Description)",
-        "Families reuniting | Canadian citizens and permanent residents sponsoring a spouse, partner, parent or grandparent.\nSkilled professionals | Individuals exploring pathways to permanent residence based on their education, work experience and goals.\nNew Canadians | Permanent residents preparing for the important milestone of Canadian citizenship.\nComplex situations | Applicants with a previous refusal or a history that needs careful review before applying again."
+        "Bringing Loved Ones Together | Helping Canadian citizens and permanent residents reunite with their loved ones through spousal or partner sponsorship, and supporting families looking to bring parents and grandparents to Canada through the Super Visa program.\nBuilding Your Future in Canada | For individuals and professionals pursuing permanent residence in Canada, with guidance tailored to their eligibility, experience, and long-term goals.\nTaking the Next Step Toward Citizenship | For permanent residents ready to pursue Canadian citizenship, with professional support throughout the application process.\nNavigating Refusals & Complex Cases | For applicants facing refusals, previous complications, or uncertainty about their next steps. We carefully assess their circumstances and develop a practical strategy forward."
       ),
-      t("processEyebrow", "Process — eyebrow", "How It Works"),
-      t("processHeading", "Process — heading", "A clear path, step by step."),
+      t("processEyebrow", "Process — eyebrow", "Our Process"),
+      t("processHeading", "Process — heading", "Your Journey With Trace"),
+      ta("processIntro", "Process — description", "A seamless, fully virtual experience designed to make your immigration process clear, organized, and supported — from your first consultation to the final decision."),
       ta(
         "processSteps",
         "Process — steps (one per line: Title | Description)",
@@ -78,7 +79,7 @@ export const PAGE_DEFS: PageDef[] = [
       ta(
         "faqItems",
         "FAQ — questions (one per line: Question | Answer)",
-        "Are consultations really 100% virtual? | Yes. All consultations are conducted online, so you can meet with us from home — whether you are in Canada or abroad.\nCan you guarantee my application will be approved? | No one can honestly guarantee an immigration outcome, because decisions are made by the government. What we offer is careful assessment and thorough preparation.\nMy application was refused before. Can you still help? | Often, yes. A previous refusal is not necessarily the end. We review what happened and explain the options that may be available to you.\nHow much do your services cost? | Fees depend on your matter and are confirmed in writing before any work begins. Contact us for consultation details.\nWhat should I prepare before my consultation? | Have your key documents and any previous application or refusal letters on hand. We will let you know if anything else is needed."
+        "Are consultations really 100% virtual? | Yes. All consultations are conducted online, so you can meet with us from home — whether you are in Canada or abroad.\nCan you guarantee my application will be approved? | No one can honestly guarantee an immigration outcome, because decisions are made by the government. What we offer is careful assessment and thorough preparation.\nMy application was refused before. Can you still help? | Often, yes. A previous refusal is not necessarily the end. We review what happened and explain the options that may be available to you.\nHow much do your services cost? | Fees depend on your matter and are confirmed in writing before any work begins. Book a consultation or contact us for details.\nWhat should I prepare before my consultation? | Have your key documents and any previous application or refusal letters on hand. We will let you know if anything else is needed."
       ),
       t("ctaEyebrow", "Booking panel eyebrow", "Your Next Chapter Starts Here"),
       t("ctaHeading", "Booking panel heading", "Let’s plan your future, together."),
@@ -96,31 +97,39 @@ export const PAGE_DEFS: PageDef[] = [
     fields: [
       ...hero(
         "About Trace Immigration",
-        "Considered guidance for life’s most important transitions.",
-        "Trace Immigration is a Canadian immigration consulting firm offering personalized, professional and strategic guidance to individuals, families and skilled professionals."
+        "Experience You Can Trust. Guidance You Can Rely On.",
+        "At Trace Immigration, we believe that every immigration journey deserves careful attention, honest advice, and a well-considered strategy."
       ),
-      img("heroImage", "Hero image", IMAGES.moraineLake),
-      t("heroImageAlt", "Hero image alt text", "Mountain lake surrounded by evergreen forest in the Canadian Rockies"),
+      rt(
+        "heroBody",
+        "Introduction (continued)",
+        "With experience in Canadian immigration dating back to 2017, our practice is built on years of helping individuals and families navigate the complexities of Canada’s immigration system.\n\nOver the years, we have assisted numerous clients in achieving their immigration goals, including obtaining permanent residence, reuniting with loved ones, and navigating previous refusals or complex applications.\n\nWe believe that a refusal does not always have to be the end of the road. Our experience extends to handling previously refused applications, identifying potential issues in immigration decisions, and pursuing reconsideration requests or other appropriate legal avenues to challenge IRCC decisions where circumstances warrant.\n\nWe understand that no two immigration cases are alike. That is why we take a thoughtful, individualized approach to every matter, focusing on understanding our clients’ circumstances, assessing their options, and developing practical strategies.\n\nAs a 100% virtual Canadian immigration practice, Trace Immigration serves clients across Canada and internationally, offering convenient access to professional advice without geographical limitations.\n\nOur commitment is simple: to provide dependable representation, transparent communication, and the professional attention your immigration future deserves."
+      ),
+      t("founderEyebrow", "Founder — eyebrow", "Meet Our Founder"),
+      t("founderName", "Founder — name", "Aarmin Monga"),
+      t("founderRole", "Founder — title", "Founder & Director | Regulated Canadian Immigration Consultant (RCIC)"),
+      t("founderHeading", "Founder — heading", "An Immigration Journey That Inspired a Profession"),
+      rt(
+        "founderBody",
+        "Founder — biography",
+        "For Aarmin Monga, immigration is more than a profession — it is a journey he understands personally.\n\nHaving come to Canada as an immigrant himself, Aarmin understands the uncertainty, challenges and important decisions that can come with building a new life in another country. His own experience shaped his commitment to helping others navigate the Canadian immigration system with reliable advice and meaningful professional support.\n\nAarmin began working in the immigration field in 2017, where he gained practical experience and developed a strong understanding of Canadian immigration processes and client needs. He later worked at a law firm in downtown Toronto, further strengthening his professional experience before establishing his own immigration consulting practice.\n\nHe became a licensed Regulated Canadian Immigration Consultant (RCIC) in 2020.\n\nAarmin holds a Bachelor of Business Administration from the University of Guelph-Humber and a Graduate Diploma in Immigration Law from Humber College.\n\nAs Founder and Director of Trace Immigration, Aarmin’s approach is guided by a simple belief: every individual deserves to understand their immigration options and receive professional guidance that respects their unique circumstances.\n\nHe believes in taking the time to listen, explain complex matters clearly, and approach each case with care, professionalism and attention to detail.\n\nThrough Trace Immigration, his goal is to provide the kind of thoughtful and dependable support he knows can make a meaningful difference during an immigration journey."
+      ),
+      img("founderImage", "Founder — photo", IMAGES.founder),
+      t("founderImageAlt", "Founder — photo alt text", "Portrait of Aarmin Monga, Founder and Director of Trace Immigration"),
       t("storyHeading", "Approach heading", "Quality over volume."),
       rt(
         "storyBody",
         "Approach text",
         "Every immigration matter is personal. Behind each application is a relationship, a career or a family’s next chapter — and it deserves more than a checklist.\n\nWe deliberately work with a focused number of clients so that each matter receives careful assessment, clear communication and thorough preparation. Before recommending a path, we take the time to understand your circumstances, your goals and any history that may affect your application."
       ),
-      t("valuesHeading", "Values heading", "What guides our work"),
+      t("valuesEyebrow", "Why us — eyebrow", "Why Choose Trace Immigration?"),
+      t("valuesHeading", "Why us — heading", "A More Personal Approach to Immigration"),
+      ta("valuesIntro", "Why us — introduction", "At Trace Immigration, we believe immigration guidance should be professional, clear and centered on the individual. We take the time to understand your circumstances, explain your options and support you with care at every stage of the process."),
       ta(
         "values",
-        "Values (one per line: Title | Description)",
-        "Careful assessment | We review your situation thoroughly before recommending a pathway.\nPersonalized attention | Your matter is handled with individual care, not as a file in a queue.\nTransparency | Clear explanations of options, requirements and next steps.\nProfessional integrity | Honest advice, even when the answer is not the one you hoped for.\nQuality over volume | A focused practice that allows thoughtful preparation.\nVirtual convenience | Consultations and representation conducted remotely, wherever you are."
+        "Why us — points (one per line: Title | Description)",
+        "Guidance Grounded in Experience | Led by a regulated immigration professional who understands the immigration journey from both personal and professional perspectives.\nEvery Case Is Unique | We take the time to assess your circumstances carefully and provide guidance tailored to your needs, priorities and long-term goals.\nClarity at Every Step | We believe clients deserve honest communication, practical explanations and a clear understanding of the process from start to finish.\nProfessionalism & Integrity | Our work is guided by professional responsibility, careful preparation and a strong commitment to ethical representation.\nExpertise Without Borders | Our virtual service model allows clients across Canada and internationally to access professional immigration guidance conveniently and confidently."
       ),
-      t("virtualHeading", "Virtual model heading", "A fully virtual practice."),
-      rt(
-        "virtualBody",
-        "Virtual model text",
-        "All consultations are conducted 100% virtually, so you can receive guidance from home — whether you are in Canada or abroad.\n\nDocuments are exchanged securely and meetings are scheduled at a time that works across time zones. There is no office to visit and no travel required."
-      ),
-      img("virtualImage", "Virtual model image", IMAGES.virtualMeeting),
-      t("virtualImageAlt", "Virtual model image alt text", "A video call in progress on a laptop at a shared table"),
     ],
   },
   {
@@ -131,26 +140,19 @@ export const PAGE_DEFS: PageDef[] = [
     metaDescription:
       "Spousal and partner sponsorship, permanent residence, Canadian citizenship, family immigration and Super Visa, and complex or previously refused matters.",
     fields: [
-      ...hero(
-        "Our Expertise",
-        "Thoughtful guidance. Meaningful futures.",
-        "Personalized support across family immigration, permanent residence and citizenship — including matters that need particular care."
+      t("heroEyebrow", "Eyebrow", "Our Areas of Expertise"),
+      ta("heroIntro", "Introduction", "Canadian immigration decisions can shape your future. From permanent residence and family reunification to citizenship and complex applications, we provide strategic, professional advice tailored to your circumstances."),
+      t("complexEyebrow", "Complex cases — eyebrow", "Beyond Standard Applications"),
+      t("complexHeading", "Complex cases — heading", "When Your Case Isn’t Straightforward."),
+      rt(
+        "complexBody",
+        "Complex cases — text",
+        "A refusal or complex immigration history deserves more than a standard approach.\n\nWith immigration experience dating back to 2017, our practice is built on helping clients navigate a wide range of immigration matters, including challenging applications and previous refusals.\n\nWe carefully examine the circumstances, identify potential concerns, and assess available options — including reconsideration requests and appropriate avenues for challenging IRCC decisions when warranted.\n\nBecause sometimes, the right strategy begins with looking beyond the initial decision."
       ),
-      t("complexHeading", "Complex matters heading", "Complex cases or a previous refusal?"),
-      ta("complexBody", "Complex matters text", "A previous refusal or an unusual history does not have to be the end of the conversation. Book a consultation and we will review your situation and discuss your options."),
+      t("complexButton", "Complex cases — button", "Discuss Your Case"),
     ],
   },
-  {
-    key: "team",
-    label: "Our Team",
-    path: "/team",
-    metaTitle: "Our Team | Trace Immigration",
-    metaDescription: "Meet the professionals behind Trace Immigration’s personalized Canadian immigration guidance.",
-    fields: [
-      ...hero("Our Team", "The people behind your file.", "Personal attention starts with knowing who is working on your matter."),
-      ta("emptyText", "Text shown before profiles are published", "Team profiles are being prepared. In the meantime, we would be glad to introduce ourselves during a consultation."),
-    ],
-  },
+
   {
     key: "testimonials",
     label: "Testimonials",
@@ -163,18 +165,7 @@ export const PAGE_DEFS: PageDef[] = [
       ta("emptyText", "Empty state text", "We only publish testimonials that clients have approved for sharing. Please check back soon, or book a consultation to discuss your own plans."),
     ],
   },
-  {
-    key: "pricing",
-    label: "Pricing",
-    path: "/pricing",
-    metaTitle: "Consultation & Service Pricing | Trace Immigration",
-    metaDescription: "Consultation and service fee information for Trace Immigration’s Canadian immigration services.",
-    fields: [
-      ...hero("Our Fees", "Transparent pricing, no surprises.", "No hidden fees, no last-minute charges. Your fee is confirmed in writing before any work begins."),
-      t("noPriceText", "Text when no price is published", "Contact us for consultation details."),
-      ta("note", "Footnote", "Government processing fees and third-party costs are separate from professional fees."),
-    ],
-  },
+
   {
     key: "contact",
     label: "Contact",
@@ -187,17 +178,22 @@ export const PAGE_DEFS: PageDef[] = [
       t("successText", "Form success message", "Thank you. Your inquiry has been received and we will respond as soon as possible."),
     ],
   },
+
   {
-    key: "booking",
-    label: "Booking",
-    path: "/booking",
-    metaTitle: "Book a Consultation | Trace Immigration",
-    metaDescription: "Book a personalized virtual consultation with Trace Immigration.",
+    key: "agreement",
+    label: "Initial Consultation Agreement",
+    path: "/initial-consultation-agreement",
+    metaTitle: "Initial Consultation Agreement | Trace Immigration",
+    metaDescription: "Review and accept the Initial Consultation Agreement before your consultation with Trace Immigration.",
     fields: [
-      ...hero("Book a Consultation", "Let’s plan your future, together.", "Choose a consultation type and a time that suits you. All consultations are conducted virtually."),
-      ta("closedText", "Text when online booking is unavailable", "Online booking is not open at the moment. Please send us an inquiry and we will arrange a time with you directly."),
-      ta("confirmationText", "Text after booking", "Your request has been received. We will confirm your consultation by email."),
-      ta("paymentNote", "Payment note", "No payment is collected online. Any applicable consultation fee and payment instructions will be confirmed with you directly."),
+      t("title", "Title", "Initial Consultation Agreement"),
+      rt(
+        "body",
+        "Agreement wording",
+        "This Initial Consultation Agreement is made this day (booking through the online booking tool) between Regulated Canadian Immigration Consultant (RCIC) Aarmin Monga (the “RCIC”) of Trace-Canada Immigration Services Inc., Membership Number R707244, and Client (Person(s) booking through this online booking tool and Person(s) going to attend the scheduled Initial Consultation Meeting).\n\nThis Agreement shall be governed by the laws in effect in the Province of Ontario, Canada, and the federal laws of Canada applicable therein.\n\nPlease be advised that Aarmin Monga is a member in good standing of the College of Immigration and Citizenship Consultants (CICC), and as such, is bound by its Bylaw, Code of Professional Ethics, and Regulations.\n\n## 1. Scope of Service\nThe RCIC will provide the Client with Initial Consultation under the terms of this Agreement.\n\n- Review information provided by the Client and provide consultation on the current status of Canadian immigration laws and policies where it relates to Client’s inquiry;\n- The work done under this agreement will be limited to the time as mentioned in the selected consultation option/type used while booking the Initial Consultation;\n- The information provided to the consultant in the Initial Consultation Form and during the consultation is for the purpose of obtaining a consultation only and is not intended for the purpose of retaining the RCIC for application, case, submission or representation in any matter, until a written legal Service Agreement establishing such nature of the relationship has been executed between the parties.\n\n## 2. Limits of Engagement\nThe services to be provided under this Agreement are limited to a single Initial consultation only and on the relevant matters described above. This agreement does not obligate the RCIC to provide further information or advice to the Client or to act for the Client in any application, representation, submissions, or proceedings. Should the Client require further services, advice, or representation from the RCIC following this initial consultation, the Client must sign a separate Service Agreement with the RCIC.\n\n## 3. Client Responsibility\nThe Client must provide the RCIC with such factual information and documentation as are required to perform the consultation. The Client must be accurate and honest and must inform the RCIC of all information, even if negative or adverse, which might be relevant to the advice provided by the RCIC in this matter. Failure to fully disclose all relevant information to the RCIC shall render the consultation provided null and void and shall void this Agreement, or seriously affect the outcome of the application of the Client or the retention of any status that the Client may obtain. In such an event, the RCIC shall not be held responsible or liable for any of the Client’s matters. The consultation fee paid by the Client is non-refundable.\n\nThe Client fully acknowledges that all information given during this consultation is provided as per the Canadian Immigration laws and policies valid until the time of consultation delivery. All information given during this consultation shall be considered null and void if there is a change in policy or immigration law at a later date after the advice is provided to the Client. The consultation fee paid by the Client shall be non-refundable.\n\n## 4. Termination\n\n- This Agreement is considered terminated upon completion of tasks identified under Clause 1 of this agreement. It is the Clients’ responsibility to settle any outstanding fees or dues for work performed by RCIC prior to termination.\n- Upon official termination, if the CLIENT(s) decides to proceed with any future applications that are personally done by the Client(s) as self-application and/or their representatives, lawyers or consultants will be done without the knowledge, approval, or involvement of RCIC and should these cause any impact, refusal, rejection, negative results or future inadmissibility, Trace-Canada Immigration Services Inc., Aarmin Monga and appointed RCIC shall not be held liable or be held legally responsible for any consequences.\n\n## 5. Payment Terms & Refund Policy\n\n- Fees shall be deemed earned by the RCIC immediately upon the commencement of the provision of professional advice and consultation session.\n- Fees paid by the Client under this agreement are non-refundable.\n\nPlease note, you are expected to have your Personal Profile Information with you during the Initial Consultation Session including but not limited to Education, Employment, Language Scores, NOC Codes and/or any other details. Our team will ask you the required information verbally during the session only. Any information sent to us in advance will NOT be reviewed or pre-assessed before the booked consultation time. Information collection, review and assessment is a part of the Initial Consultation session only, no extra time will be allocated for this.\n\nIf you choose to proceed with the booking, it is deemed that you agree to the terms and conditions of the agreement above and of our Privacy Policy and Terms & Conditions."
+      ),
+      t("agreeLabel", "Agree checkbox text", "I agree with the above Initial Consultation Agreement and its terms & conditions."),
+      ta("successText", "Text after submitting", "Thank you. Your signed Initial Consultation Agreement has been received."),
     ],
   },
   {

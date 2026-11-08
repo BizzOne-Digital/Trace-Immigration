@@ -1,14 +1,21 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { MapleLeafDecor } from "../Icons";
+import { BOOKING_URL } from "@/lib/site";
 
-/** Inner-page hero: editorial heading on ivory. */
-export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string; title: string; intro?: string; children?: React.ReactNode }) {
+/** Inner-page hero: editorial heading on ivory. Without a title, the eyebrow becomes the (larger) page heading. */
+export function PageHero({ eyebrow, title, intro, children }: { eyebrow: string; title?: string; intro?: string; children?: React.ReactNode }) {
   return (
     <section className="border-b border-line/70 bg-ivory">
       <div className="container-x py-16 md:py-24">
-        <p className="eyebrow">{eyebrow}</p>
-        <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.08] text-charcoal sm:text-5xl md:text-6xl">{title}</h1>
+        {title ? (
+          <>
+            <p className="eyebrow">{eyebrow}</p>
+            <h1 className="mt-4 max-w-4xl font-serif text-4xl leading-[1.08] text-charcoal sm:text-5xl md:text-6xl">{title}</h1>
+          </>
+        ) : (
+          <h1 className="eyebrow !text-base sm:!text-lg">{eyebrow}</h1>
+        )}
         {intro && <p className="mt-6 max-w-2xl text-lg leading-relaxed text-muted">{intro}</p>}
         {children}
       </div>
@@ -55,9 +62,9 @@ export function BookingCta({ eyebrow, heading, text, button }: { eyebrow: string
         <span aria-hidden className="mx-auto mt-3 block h-px w-10 bg-champagne" />
         <h2 id="cta-heading" className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">{heading}</h2>
         <p className="mt-3 text-white/85">{text}</p>
-        <Link href="/booking" className="btn-gold mt-8">
+        <a href={BOOKING_URL} className="btn-gold mt-8">
           {button} <ArrowRight aria-hidden className="h-4 w-4" />
-        </Link>
+        </a>
       </div>
     </section>
   );

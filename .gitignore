@@ -7,3 +7,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .vercel
+
+# Client-supplied feedback files (not part of the site)
+client-files/

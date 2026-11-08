@@ -35,7 +35,7 @@ export const DEFAULT_SETTINGS: SiteSettingsDoc = {
   phone: "+1 (647) 980-2535",
   contactPerson: "Aarmin Monga",
   virtualStatement: "Consultations are conducted 100% virtually.",
-  social: { facebook: "", instagram: "", linkedin: "", youtube: "", x: "", tiktok: "" },
+  social: { facebook: "", instagram: "", google: "", linkedin: "", youtube: "", x: "", tiktok: "" },
   seoDefaultTitle: "",
   seoDefaultDescription: "",
   ogImage: "",
@@ -107,7 +107,7 @@ export const getConsultationTypes = cache(async () =>
 
 export function socialLinks(s: SiteSettingsDoc) {
   const labels: Record<string, string> = {
-    facebook: "Facebook", instagram: "Instagram", linkedin: "LinkedIn", youtube: "YouTube", x: "X", tiktok: "TikTok",
+    facebook: "Facebook", instagram: "Instagram", google: "Google Reviews", linkedin: "LinkedIn", youtube: "YouTube", x: "X", tiktok: "TikTok",
   };
   return Object.entries(s.social || {})
     .filter(([, url]) => typeof url === "string" && /^https:\/\/[^\s]+$/.test(url))

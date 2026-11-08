@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
 import Logo from "../Logo";
-import { NAV_LINKS, SECONDARY_LINKS } from "@/lib/site";
+import { BOOKING_URL, NAV_LINKS, SECONDARY_LINKS } from "@/lib/site";
 
 function isActive(pathname: string, href: string) {
   return href === "/" ? pathname === "/" : pathname === href || pathname.startsWith(`${href}/`);
@@ -68,9 +68,9 @@ export default function Header({ logoUrl, logoAlt }: { logoUrl: string; logoAlt:
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link href="/booking" className="btn-dark hidden sm:inline-flex">
+          <a href={BOOKING_URL} className="btn-dark hidden sm:inline-flex">
             Book a Consultation <ArrowRight aria-hidden className="h-4 w-4" strokeWidth={1.5} />
-          </Link>
+          </a>
           <button
             ref={toggleRef}
             type="button"
@@ -115,9 +115,9 @@ export default function Header({ logoUrl, logoAlt }: { logoUrl: string; logoAlt:
                 </li>
               ))}
             </ul>
-            <Link href="/booking" className="btn-gold mt-8 w-full justify-center">
+            <a href={BOOKING_URL} className="btn-gold mt-8 w-full justify-center">
               Book a Consultation <ArrowRight aria-hidden className="h-4 w-4" />
-            </Link>
+            </a>
           </nav>
         </div>
       )}

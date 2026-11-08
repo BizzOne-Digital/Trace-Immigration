@@ -1,8 +1,8 @@
-import Link from "next/link";
 import { CalendarDays, Laptop, Mail, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/blocks";
 import { getPage, getServices, getSettings, telHref } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { BOOKING_URL } from "@/lib/site";
 import ContactForm from "./ContactForm";
 
 export const generateMetadata = () => pageMetadata("contact", "/contact");
@@ -40,7 +40,7 @@ export default async function ContactPage() {
             <CalendarDays aria-hidden className="h-6 w-6 text-gold" strokeWidth={1.3} />
             <p className="mt-3 font-serif text-2xl text-charcoal">Prefer to book directly?</p>
             <p className="mt-2 text-sm text-muted">Choose a consultation time that suits you.</p>
-            <Link href="/booking" className="link-gold mt-4 text-sm">Book a Consultation</Link>
+            <a href={BOOKING_URL} className="link-gold mt-4 text-sm">Book a Consultation</a>
           </div>
         </aside>
         <div>

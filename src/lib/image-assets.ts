@@ -9,7 +9,8 @@ export const IMAGES = {
   "torontoPark": "/images/canadian-citizenship.webp",
   "familyBeach": "/images/family-immigration.webp",
   "reviewMeeting": "/images/complex-case-review.webp",
-  "harbourfront": "/images/harbourfront.webp"
+  "harbourfront": "/images/harbourfront.webp",
+  "founder": "/images/aarmin-monga.webp"
 } as const;
 const LEGACY_IMAGES: Record<string, string> = {
   "/photo-1507992781348-310259076fe0": "/images/toronto-sunrise.webp",

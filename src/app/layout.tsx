@@ -21,7 +21,6 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl()),
   title: { default: "Trace Immigration", template: "%s" },
-  icons: { icon: "/brand/logo-transparent.png" },
 };
 
 export const viewport: Viewport = { themeColor: "#FBF8F1" };

@@ -109,10 +109,11 @@ export async function generateAgreementPdf(input: AgreementPdfInput) {
   const rows: [string, string][] = [
     ["Full name", input.clientFullName],
     ["Email", input.clientEmail],
-    ["Phone", input.clientPhone || "-"],
-    ["Address", input.clientAddress || "-"],
+    ["Phone", input.clientPhone],
+    ["Address", input.clientAddress],
   ];
-  for (const [k, v] of rows) text(`${k}: ${v}`, sans, 10, INK, 4);
+  // Rows the signer was not asked for (e.g. the website agreement collects only a name) are left out.
+  for (const [k, v] of rows) if (v) text(`${k}: ${v}`, sans, 10, INK, 4);
   y -= 8;
 
   text("ELECTRONIC SIGNATURE", sansBold, 9, GOLD, 8);

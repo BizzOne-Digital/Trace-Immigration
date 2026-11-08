@@ -5,6 +5,7 @@ import { ServiceIcon } from "@/components/Icons";
 import { BookingCta, LinkArrow } from "@/components/site/blocks";
 import { getPage, getServices, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
+import { BOOKING_URL } from "@/lib/site";
 
 /** Parses admin-edited "Title | Description" lines. */
 function pairs(text: string) {
@@ -20,8 +21,6 @@ export const generateMetadata = () => pageMetadata("home", "/");
 export default async function HomePage() {
   const [{ fields: f }, services, testimonials] = await Promise.all([getPage("home"), getServices(), getTestimonials()]);
   const featured = (services.filter((s) => s.featured).length ? services.filter((s) => s.featured) : services).slice(0, 3);
-  const more = services.filter((s) => !featured.includes(s));
-  const complexService = services.find((s) => s.slug === "refusals-complex-matters");
 
   return (
     <>
@@ -51,9 +50,9 @@ export default async function HomePage() {
             </h1>
             <p className="mt-6 max-w-md text-lg leading-snug text-ink sm:text-xl">{f.heroSubtitle}</p>
             <p className="mt-8 text-[0.95rem] text-ink">{f.heroPrompt}</p>
-            <Link href="/booking" className="btn-gold mt-4">
+            <a href={BOOKING_URL} className="btn-gold mt-4">
               {f.heroCta} <ArrowRight aria-hidden className="h-4 w-4" />
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -77,24 +76,21 @@ export default async function HomePage() {
       {/* SERVICES */}
       <section className="bg-ivory py-16 md:py-20" aria-labelledby="services-heading">
         <div className="container-x">
-          <p className="eyebrow text-center">{f.servicesEyebrow}</p>
-          <h2 id="services-heading" className="mt-4 text-center font-serif text-4xl leading-tight text-charcoal sm:text-5xl">
-            {f.servicesHeading}
-          </h2>
+          <h2 id="services-heading" className="eyebrow text-center !text-base sm:!text-lg">{f.servicesEyebrow}</h2>
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {featured.map((s) => (
               <li key={s.slug} className="card-line flex flex-col items-center px-7 py-10 text-center transition-colors hover:border-champagne">
                 <ServiceIcon name={s.icon} className="h-12 w-12 text-gold" strokeWidth={1.1} />
                 <h3 className="mt-5 font-serif text-[1.7rem] leading-tight text-charcoal">{s.title}</h3>
                 <p className="mt-3 max-w-[16rem] leading-relaxed text-muted">{s.tagline}</p>
-                <LinkArrow href={`/services/${s.slug}`} className="mt-auto pt-6 text-sm">
+                <LinkArrow href="/services" className="mt-auto pt-6 text-sm">
                   Explore Service<span className="sr-only">: {s.title}</span>
                 </LinkArrow>
               </li>
             ))}
           </ul>
           <p className="mt-10 text-center">
-            <LinkArrow href={complexService ? `/services/${complexService.slug}` : "/booking"} className="text-sm !font-normal !text-ink">
+            <LinkArrow href="/services#complex-heading" className="text-sm !font-normal !text-ink">
               {f.complexText}
             </LinkArrow>
           </p>
@@ -119,7 +115,8 @@ export default async function HomePage() {
       <section className="bg-cream py-16 md:py-20" aria-labelledby="who-heading">
         <div className="container-x">
           <p className="eyebrow text-center">{f.whoEyebrow}</p>
-          <h2 id="who-heading" className="mt-4 text-center font-serif text-4xl leading-tight text-charcoal sm:text-5xl">{f.whoHeading}</h2>
+          <h2 id="who-heading" className="mx-auto mt-4 max-w-4xl text-center font-serif text-4xl leading-tight text-charcoal sm:text-5xl">{f.whoHeading}</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-center leading-relaxed text-muted">{f.whoIntro}</p>
           <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {pairs(f.whoItems).map(([title, desc], i) => {
               const Icon = [HeartHandshake, Briefcase, Flag, ShieldCheck][i % 4];
@@ -135,34 +132,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* MORE SERVICES */}
-      {more.length > 0 && (
-        <section className="bg-ivory py-14" aria-labelledby="more-heading">
-          <div className="container-x">
-            <h2 id="more-heading" className="text-center font-serif text-3xl text-charcoal">More ways we can help</h2>
-            <ul className="mx-auto mt-8 grid max-w-4xl gap-4 sm:grid-cols-2">
-              {more.map((s) => (
-                <li key={s.slug}>
-                  <Link href={`/services/${s.slug}`} className="card-line group flex items-center gap-4 p-5 transition-colors hover:border-gold">
-                    <ServiceIcon name={s.icon} className="h-8 w-8 shrink-0 text-gold" strokeWidth={1.2} />
-                    <span className="flex-1">
-                      <span className="block font-serif text-xl text-charcoal">{s.title}</span>
-                      <span className="block text-sm text-muted">{s.tagline}</span>
-                    </span>
-                    <ArrowRight aria-hidden className="h-4 w-4 text-gold transition-transform group-hover:translate-x-1" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      )}
-
       {/* HOW IT WORKS */}
       <section className="bg-ivory py-16 md:py-20" aria-labelledby="process-heading">
         <div className="container-x">
           <p className="eyebrow text-center">{f.processEyebrow}</p>
           <h2 id="process-heading" className="mt-4 text-center font-serif text-4xl leading-tight text-charcoal sm:text-5xl">{f.processHeading}</h2>
+          <p className="mx-auto mt-5 max-w-3xl text-center leading-relaxed text-muted">{f.processIntro}</p>
           <ol className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {pairs(f.processSteps).map(([title, desc], i) => (
               <li key={title} className="relative border-t border-gold pt-6">
@@ -173,7 +148,7 @@ export default async function HomePage() {
             ))}
           </ol>
           <p className="mt-12 text-center">
-            <Link href="/booking" className="btn-gold">{f.heroCta} <ArrowRight aria-hidden className="h-4 w-4" /></Link>
+            <a href={BOOKING_URL} className="btn-gold">{f.heroCta} <ArrowRight aria-hidden className="h-4 w-4" /></a>
           </p>
         </div>
       </section>

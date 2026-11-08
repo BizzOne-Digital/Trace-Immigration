@@ -435,7 +435,7 @@ export interface SiteSettingsDoc {
   phone: string;
   contactPerson: string;
   virtualStatement: string;
-  social: { facebook: string; instagram: string; linkedin: string; youtube: string; x: string; tiktok: string };
+  social: { facebook: string; instagram: string; google: string; linkedin: string; youtube: string; x: string; tiktok: string };
   seoDefaultTitle: string;
   seoDefaultDescription: string;
   ogImage: string;
@@ -454,6 +454,7 @@ const SiteSettingsSchema = new Schema<SiteSettingsDoc>(
     social: {
       facebook: { type: String, default: "" },
       instagram: { type: String, default: "" },
+      google: { type: String, default: "" },
       linkedin: { type: String, default: "" },
       youtube: { type: String, default: "" },
       x: { type: String, default: "" },

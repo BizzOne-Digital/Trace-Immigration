@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Mail, Phone, Laptop } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
 import Logo from "../Logo";
-import { NAV_LINKS, SECONDARY_LINKS, LEGAL_LINKS } from "@/lib/site";
+import { BOOKING_URL, NAV_LINKS, SECONDARY_LINKS, LEGAL_LINKS } from "@/lib/site";
 import { socialLinks, telHref } from "@/lib/content";
 import type { SiteSettingsDoc } from "@/lib/models";
 
@@ -10,9 +10,9 @@ export default function Footer({ settings }: { settings: SiteSettingsDoc }) {
   const year = new Date().getFullYear();
   return (
     <footer className="bg-ivory">
-      <div className="container-x grid gap-8 border-b border-line py-10 md:grid-cols-[auto_1fr] md:items-center lg:grid-cols-[auto_1fr_1fr_1fr]">
+      <div className="container-x grid gap-8 border-b border-line py-10 md:grid-cols-[auto_1fr_1fr] md:items-center">
         <Logo src={settings.logoUrl} alt={settings.logoAlt} className="h-14 w-[152px]" />
-        <a href={`mailto:${settings.email}`} className="flex items-center gap-3 text-sm text-ink hover:text-gold-ink lg:border-l lg:border-line lg:pl-8">
+        <a href={`mailto:${settings.email}`} className="flex items-center gap-3 text-sm text-ink hover:text-gold-ink md:border-l md:border-line md:pl-8">
           <Mail aria-hidden className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.4} />
           <span className="break-all">{settings.email}</span>
         </a>
@@ -20,10 +20,6 @@ export default function Footer({ settings }: { settings: SiteSettingsDoc }) {
           <Phone aria-hidden className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.4} />
           {settings.phone}
         </a>
-        <p className="flex items-center gap-3 text-sm text-ink lg:border-l lg:border-line lg:pl-8">
-          <Laptop aria-hidden className="h-5 w-5 shrink-0 text-gold" strokeWidth={1.4} />
-          {settings.virtualStatement}
-        </p>
       </div>
 
       <div className="container-x grid gap-8 py-10 text-sm sm:grid-cols-2 lg:grid-cols-4">
@@ -40,9 +36,8 @@ export default function Footer({ settings }: { settings: SiteSettingsDoc }) {
         <div>
           <h2 className="eyebrow mb-4">Consultations</h2>
           <ul className="space-y-2">
-            <li><Link href="/booking" className="text-muted hover:text-gold-ink">Book a Consultation</Link></li>
+            <li><a href={BOOKING_URL} className="text-muted hover:text-gold-ink">Book a Consultation</a></li>
             <li><Link href="/contact" className="text-muted hover:text-gold-ink">Send an Inquiry</Link></li>
-            <li><Link href="/pricing" className="text-muted hover:text-gold-ink">Pricing</Link></li>
           </ul>
         </div>
         <div>
@@ -70,7 +65,7 @@ export default function Footer({ settings }: { settings: SiteSettingsDoc }) {
       </div>
       <div className="border-t border-line">
         <p className="container-x py-5 text-xs text-muted">
-          © {year} {settings.legalName}. Operating as {settings.businessName}.
+          © {year} {settings.legalName}
         </p>
       </div>
     </footer>

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import {
-  LayoutDashboard, FileText, Briefcase, Users, Quote, BadgeDollarSign, CalendarClock, CalendarDays, Clock,
+  LayoutDashboard, FileText, Briefcase, Quote, CalendarClock, CalendarDays, Clock,
   Inbox, FileSignature, Images, Settings, Menu, X, ExternalLink, LogOut,
 } from "lucide-react";
 import { logout } from "@/app/admin/auth-actions";
@@ -16,9 +16,7 @@ const GROUPS = [
     items: [
       { href: "/admin/pages", label: "Pages", icon: FileText },
       { href: "/admin/services", label: "Services", icon: Briefcase },
-      { href: "/admin/team", label: "Team", icon: Users },
       { href: "/admin/testimonials", label: "Testimonials", icon: Quote },
-      { href: "/admin/pricing", label: "Pricing", icon: BadgeDollarSign },
       { href: "/admin/media", label: "Media library", icon: Images },
     ],
   },
