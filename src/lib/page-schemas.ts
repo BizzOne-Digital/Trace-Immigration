@@ -168,12 +168,12 @@ export const PAGE_DEFS: PageDef[] = [
 
   {
     key: "contact",
-    label: "Contact",
+    label: "Contact Us",
     path: "/contact",
-    metaTitle: "Contact Trace Immigration",
+    metaTitle: "Contact Us | Trace Immigration",
     metaDescription: "Contact Trace Immigration by email, phone or online inquiry. Consultations are conducted 100% virtually.",
     fields: [
-      ...hero("Contact", "Let’s start the conversation.", "Share a few details about your situation and we will be in touch."),
+      ...hero("Contact Us", "Let’s start the conversation.", "Share a few details about your situation and we will be in touch."),
       t("formHeading", "Form heading", "Send an inquiry"),
       t("successText", "Form success message", "Thank you. Your inquiry has been received and we will respond as soon as possible."),
     ],

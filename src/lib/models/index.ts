@@ -452,9 +452,9 @@ const SiteSettingsSchema = new Schema<SiteSettingsDoc>(
     contactPerson: { type: String, default: "Aarmin Monga", maxlength: 120 },
     virtualStatement: { type: String, default: "Consultations are conducted 100% virtually.", maxlength: 200 },
     social: {
-      facebook: { type: String, default: "" },
-      instagram: { type: String, default: "" },
-      google: { type: String, default: "" },
+      facebook: { type: String, default: "https://www.facebook.com/traceimmigration/" },
+      instagram: { type: String, default: "https://www.instagram.com/traceimmigration/" },
+      google: { type: String, default: "https://share.google/pCzcf7o6f3EsEt6OI" },
       linkedin: { type: String, default: "" },
       youtube: { type: String, default: "" },
       x: { type: String, default: "" },

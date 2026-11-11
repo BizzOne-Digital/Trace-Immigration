@@ -35,7 +35,7 @@ export const DEFAULT_SETTINGS: SiteSettingsDoc = {
   phone: "+1 (647) 980-2535",
   contactPerson: "Aarmin Monga",
   virtualStatement: "Consultations are conducted 100% virtually.",
-  social: { facebook: "", instagram: "", google: "", linkedin: "", youtube: "", x: "", tiktok: "" },
+  social: { facebook: "https://www.facebook.com/traceimmigration/", instagram: "https://www.instagram.com/traceimmigration/", google: "https://share.google/pCzcf7o6f3EsEt6OI", linkedin: "", youtube: "", x: "", tiktok: "" },
   seoDefaultTitle: "",
   seoDefaultDescription: "",
   ogImage: "",

@@ -26,7 +26,7 @@ const SERVICE_KEYWORDS: Record<string, string[]> = {
 /** Simple, on-device answers. No external services are called. */
 function reply(input: string, p: Props): Msg {
   const q = ` ${input.toLowerCase().trim()} `;
-  const contact: Action = { label: "Contact us", href: "/contact" };
+  const contact: Action = { label: "Contact Us", href: "/contact" };
   const book: Action = { label: "Book a consultation", href: BOOKING_URL };
 
   for (const s of p.services) {
