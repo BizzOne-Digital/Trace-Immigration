@@ -72,3 +72,32 @@ export function ServiceIcon({ name, ...p }: { name: string } & LucideProps) {
   const Cmp = MAP[name] ?? MAP["file-text"];
   return <Cmp aria-hidden {...p} />;
 }
+
+/** Brand marks for social links (Lucide no longer ships brand icons). Sized and coloured like Lucide icons. */
+export function SocialIcon({ name, className }: { name: string; className?: string }) {
+  const common = { xmlns: "http://www.w3.org/2000/svg", viewBox: "0 0 24 24", className, "aria-hidden": true, focusable: "false" } as const;
+  if (name === "instagram") {
+    return (
+      <svg {...common} fill="none" stroke="currentColor" strokeWidth={1.6}>
+        <rect x="3" y="3" width="18" height="18" rx="5" />
+        <circle cx="12" cy="12" r="4" />
+        <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+      </svg>
+    );
+  }
+  if (name === "facebook") {
+    return (
+      <svg {...common} fill="currentColor">
+        <path d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3Z" />
+      </svg>
+    );
+  }
+  if (name === "google") {
+    return (
+      <svg {...common} fill="currentColor">
+        <path d="M21.6 10.2H12v3.9h5.5c-.5 2.5-2.6 3.9-5.5 3.9a6 6 0 1 1 3.9-10.6l2.9-2.8A10 10 0 1 0 12 22c5.8 0 9.8-4.1 9.8-9.8 0-.7-.1-1.3-.2-2Z" />
+      </svg>
+    );
+  }
+  return null;
+}

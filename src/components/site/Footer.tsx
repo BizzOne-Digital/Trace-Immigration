@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone } from "lucide-react";
 import Logo from "../Logo";
+import SocialLinks from "./SocialLinks";
 import { BOOKING_URL, NAV_LINKS, SECONDARY_LINKS, LEGAL_LINKS } from "@/lib/site";
 import { socialLinks, telHref } from "@/lib/content";
 import type { SiteSettingsDoc } from "@/lib/models";
@@ -50,16 +51,8 @@ export default function Footer({ settings }: { settings: SiteSettingsDoc }) {
         </div>
         {socials.length > 0 && (
           <div>
-            <h2 className="eyebrow mb-4">Follow</h2>
-            <ul className="space-y-2">
-              {socials.map((s) => (
-                <li key={s.key}>
-                  <a href={s.url} target="_blank" rel="noopener noreferrer" className="text-muted hover:text-gold-ink">
-                    {s.label}<span className="sr-only"> (opens in a new tab)</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <h2 className="eyebrow mb-4">Follow Us</h2>
+            <SocialLinks socials={socials} />
           </div>
         )}
       </div>

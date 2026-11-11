@@ -24,7 +24,7 @@ export default async function SiteLayout({ children }: { children: React.ReactNo
   };
   return (
     <>
-      <Header logoUrl={settings.logoUrl} logoAlt={settings.logoAlt} />
+      <Header logoUrl={settings.logoUrl} logoAlt={settings.logoAlt} socials={socialLinks(settings)} />
       <main id="main">{children}</main>
       <Footer settings={settings} />
       <JsonLd data={org} />
