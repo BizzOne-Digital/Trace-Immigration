@@ -1,0 +1,58 @@
+# Builds the site on GitHub and deploys the standalone server to the client's cPanel Node.js app.
+# Runtime environment variables live in cPanel (Setup Node.js App), not here.
+name: Deploy to cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      APP_DIR: /home/traceion/trace-app
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://traceimmigration.com
+          MONGODB_URI: ${{ secrets.MONGODB_URI }}
+
+      - name: Assemble standalone bundle
+        run: |
+          cp -r public .next/standalone/public
+          mkdir -p .next/standalone/.next
+          cp -r .next/static .next/standalone/.next/static
+
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.CPANEL_SSH_KEY }}" > ~/.ssh/id_deploy
+          chmod 600 ~/.ssh/id_deploy
+          ssh-keyscan -p "${{ secrets.CPANEL_SSH_PORT }}" "${{ secrets.CPANEL_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: Upload
+        run: |
+          rsync -az --delete \
+            --exclude 'tmp/' --exclude 'stderr.log' --exclude '.htaccess' \
+            -e "ssh -i ~/.ssh/id_deploy -p ${{ secrets.CPANEL_SSH_PORT }}" \
+            .next/standalone/ "${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}:$APP_DIR/"
+
+      - name: Restart app
+        run: |
+          ssh -i ~/.ssh/id_deploy -p "${{ secrets.CPANEL_SSH_PORT }}" "${{ secrets.CPANEL_USER }}@${{ secrets.CPANEL_HOST }}" \
+            "mkdir -p $APP_DIR/tmp && touch $APP_DIR/tmp/restart.txt"

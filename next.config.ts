@@ -2,6 +2,8 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   poweredByHeader: false,
+  // Self-contained server.js build for the cPanel Node.js app (Passenger).
+  output: "standalone",
   serverExternalPackages: ["mongoose", "pdf-lib", "nodemailer", "bcryptjs"],
   images: {
     // Uploaded media is served from MongoDB through /api/uploads/{folder}/{filename}.
