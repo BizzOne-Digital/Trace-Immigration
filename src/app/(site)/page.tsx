@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { ArrowRight, Briefcase, CheckCircle2, Flag, Globe, HeartHandshake, Laptop, Plus, Quote, ShieldCheck, Users } from "lucide-react";
 import SafeImage from "@/components/SafeImage";
-import { ServiceIcon } from "@/components/Icons";
+import { ServiceIcon, SocialIcon } from "@/components/Icons";
 import { BookingCta, LinkArrow } from "@/components/site/blocks";
 import { getPage, getServices, getTestimonials } from "@/lib/content";
 import { pageMetadata } from "@/lib/seo";
@@ -176,6 +176,40 @@ export default async function HomePage() {
           <SafeImage src={f.whyImage} alt={f.whyImageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
         </div>
       </section>
+
+      {/* GOOGLE REVIEWS (copied from the firm's public Google profile) */}
+      {pairs(f.reviewsItems).length > 0 && (
+        <section className="bg-ivory py-16 md:py-20" aria-labelledby="reviews-heading">
+          <div className="container-x">
+            <p className="eyebrow text-center">{f.reviewsEyebrow}</p>
+            <h2 id="reviews-heading" className="mt-4 text-center font-serif text-4xl text-charcoal sm:text-5xl">{f.reviewsHeading}</h2>
+            <ul className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {pairs(f.reviewsItems).map(([name, review]) => (
+                <li key={name} className="card-line flex flex-col p-7">
+                  <figure className="flex flex-1 flex-col">
+                    <Quote aria-hidden className="h-6 w-6 text-champagne" strokeWidth={1.2} />
+                    <blockquote className="mt-3 flex-1 leading-relaxed text-ink">{review}</blockquote>
+                    <figcaption className="mt-6 flex items-center gap-3 border-t border-line pt-4">
+                      <span className="flex h-9 w-9 items-center justify-center rounded-full bg-cream font-serif text-lg text-gold-ink">{name.charAt(0)}</span>
+                      <span>
+                        <span className="block text-sm font-semibold text-charcoal">{name}</span>
+                        <span className="flex items-center gap-1.5 text-xs text-muted"><SocialIcon name="google" className="h-3 w-3" /> Google review</span>
+                      </span>
+                    </figcaption>
+                  </figure>
+                </li>
+              ))}
+            </ul>
+            {f.reviewsUrl && (
+              <p className="mt-12 text-center">
+                <a href={f.reviewsUrl} target="_blank" rel="noopener noreferrer" className="btn-gold">
+                  <SocialIcon name="google" className="h-4 w-4" /> {f.reviewsButton}<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </p>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* TESTIMONIALS (approved only) */}
       {testimonials.length > 0 && (

@@ -75,6 +75,16 @@ export const PAGE_DEFS: PageDef[] = [
       ),
       img("whyImage", "Why us — image", IMAGES.virtualMeeting),
       t("whyImageAlt", "Why us — image alt text", "A virtual consultation in progress on a laptop"),
+      t("reviewsEyebrow", "Google reviews — eyebrow", "Google Reviews"),
+      t("reviewsHeading", "Google reviews — heading", "What Our Clients Say"),
+      ta("reviewsItems", "Google reviews — reviews (one per line: Name | Review, copied exactly from Google)", `Tejas Makwana | I had a great experience with Trace Immigration during my PR process. Special thanks to Aarmin for the excellent support and guidance throughout the process. I’m happy to have received approval for my PR application. Highly recommend their services!
+Deepu Surendranadhan | A five-star experience with Trace Immigration! Our case handler, Aarmin, was exceptional. He handled our family PR application with great attention to detail and a high level of expertise. Highly recommend Aarmin and the Trace team to anyone looking to move to Canada! Thank you, Aarmin, for all your support.
+Jugraj Singh | I am very thankful to Trace Immigration for handling my Canadian spousal PR visa. Aarmin sir was very supportive, responsive and helpful throughout the process. Highly recommended.
+Divyansh | Very professional and best service we received from Aarmin. He got us the approval for the Super Visa application we filed for our parents.
+Harmehar Hora | Professional & responsive team. Really appreciate their efforts on our visa application with IRCC and helping us get the approval!
+Eman Imran | Helped me fix all my immigration issues!! Best services provided by Aarmin and his team.`),
+      t("reviewsButton", "Google reviews — button label", "Read All Reviews on Google"),
+      t("reviewsUrl", "Google reviews — Google Maps link", "https://maps.app.goo.gl/6ukeg6Q9rBKGPFH77"),
       t("faqHeading", "FAQ — heading", "Frequently asked questions"),
       ta(
         "faqItems",
